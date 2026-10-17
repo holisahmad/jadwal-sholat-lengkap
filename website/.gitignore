@@ -19,11 +19,15 @@ dist-ssr
 .vercel
 .tanstack
 
-# Editor directories and files
+# Editor and temp directories
 .vscode/*
 !.vscode/extensions.json
 .idea
 .DS_Store
+.gradle
+.grok
+.serena
+.agents
 *.suo
 *.ntvs*
 *.njsproj
