@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Nur",
+      "hasCanvas": false,
+      "bodyTextLen": 1119,
+      "bodyTextHash": "14191f6de7c121da40d8345ec6a503da1752331f49b7b279b6e638a49d4ef7e8",
+      "bodyTextPrefix": "NUR Pendamping ibadah Kamis, 3 September 2026·22 Rabiulawal 1448",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Nur",
+      "hasCanvas": false,
+      "bodyTextLen": 1119,
+      "bodyTextHash": "14191f6de7c121da40d8345ec6a503da1752331f49b7b279b6e638a49d4ef7e8",
+      "bodyTextPrefix": "NUR Pendamping ibadah Kamis, 3 September 2026·22 Rabiulawal 1448",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}

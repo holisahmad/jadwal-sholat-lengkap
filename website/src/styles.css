@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Figtree:wght@300..700&family=Noto+Naskh+Arabic:wght@400..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Figtree", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-arab: "Noto Naskh Arabic", "Amiri", serif;
+
+  --color-bg: #0c1210;
+  --color-surface: #151c19;
+  --color-raised: #1c2622;
+  --color-fg: #e8ece8;
+  --color-muted: #8a968c;
+  --color-faint: #5d6b62;
+  --color-primary: #5d9b7e;
+  --color-primary-fg: #06110c;
+  --color-border: #2a3530;
+  --color-danger: #c47a72;
+  --color-gold: #d4af37;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  --shadow-soft: 0 18px 40px -24px rgb(0 0 0 / 0.55);
+  --shadow-glow: 0 0 30px -10px rgba(93, 155, 126, 0.25);
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  html,
+  body,
+  #app {
+    min-height: 100%;
+    background: var(--color-bg);
+  }
+  body {
+    margin: 0;
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    background: radial-gradient(circle at 50% 0%, rgba(93, 155, 126, 0.08) 0%, transparent 45%), var(--color-bg);
+    background-attachment: fixed;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+}
+.font-arab {
+  font-family: var(--font-arab);
+}
+
+.card-hover-glow {
+  transition: all 0.25s ease;
+}
+.card-hover-glow:hover {
+  border-color: rgba(93, 155, 126, 0.4);
+  box-shadow: 0 8px 30px -10px rgba(93, 155, 126, 0.15);
+  transform: translateY(-1px);
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.75; }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,4 @@
+v1.0.0 - Rilis Perdana!
+- Tampilan antarmuka modern & responsif.
+- Fitur lengkap siap pakai.
+- Performa stabil dan hemat daya.

@@ -1,0 +1,98 @@
+{
+  "app_name": "Jadwal Sholat Lengkap",
+  "package_name": "com.jadwalsholat.lengkap",
+  "total_assets": 18,
+  "total_size_mb": 1.68,
+  "assets": [
+    {
+      "file": "jadwalsholatlengkap-Play-Store-Asset-Kit.png",
+      "size_kb": 359.9,
+      "md5": "aca47f9b4d4a92e63e0c55f1662d2c3a"
+    },
+    {
+      "file": "tablet/tab01-split-view.png",
+      "size_kb": 96.0,
+      "md5": "821c13a47efe440bc224cfaf26e4398f"
+    },
+    {
+      "file": "tablet/tab02-qr-history.png",
+      "size_kb": 41.8,
+      "md5": "25b2e216833f88f2d0d8b79fa623be57"
+    },
+    {
+      "file": "screenshots/ss01-dashboard.png",
+      "size_kb": 81.6,
+      "md5": "e8f75ff76c2d00326000d9cfda16ec72"
+    },
+    {
+      "file": "screenshots/ss02-action.png",
+      "size_kb": 78.3,
+      "md5": "2183d06a7a6ba01c7df8975582ad89a1"
+    },
+    {
+      "file": "screenshots/ss03-result.png",
+      "size_kb": 78.4,
+      "md5": "17e98039a5820334971a74e77a585413"
+    },
+    {
+      "file": "screenshots/ss04-history.png",
+      "size_kb": 80.1,
+      "md5": "411df8e37d9fa34dc6eddf3f6db9f7f2"
+    },
+    {
+      "file": "screenshots/ss05-features.png",
+      "size_kb": 79.3,
+      "md5": "08db3460c454227cb019a80d1c95d4e3"
+    },
+    {
+      "file": "icon/play-icon-512.png",
+      "size_kb": 282.3,
+      "md5": "cc85e99d9f86ce3823d3117d308348ff"
+    },
+    {
+      "file": "icon/play-icon-fullbleed-512.png",
+      "size_kb": 282.0,
+      "md5": "b5421d2da1e5b939842ccb27891e6d8c"
+    },
+    {
+      "file": "icon/play-icon-web-512.jpg",
+      "size_kb": 70.9,
+      "md5": "366c5be2374c658aad07ebdd8524ed6d"
+    },
+    {
+      "file": "feature-graphic/feature-graphic-1024x500.jpg",
+      "size_kb": 209.0,
+      "md5": "626204e69586c23f78006905c3ebdf34"
+    },
+    {
+      "file": "feature-graphic/feature-graphic-1024x500.png",
+      "size_kb": 817.0,
+      "md5": "1fcc61b18e2e06962a044ec7d6daff44"
+    },
+    {
+      "file": "metadata/full_description.txt",
+      "size_kb": 0.9,
+      "md5": "2db3711806690a329a446ddf658f8855"
+    },
+    {
+      "file": "metadata/listing-copy.md",
+      "size_kb": 1.5,
+      "md5": "e55e5e52a901d9989c087fee77663879"
+    },
+    {
+      "file": "metadata/promo_140_chars.txt",
+      "size_kb": 0.1,
+      "md5": "1cb7a2f8edc76e9c12c08b9497095d94"
+    },
+    {
+      "file": "metadata/short_description.txt",
+      "size_kb": 0.1,
+      "md5": "802d2bc55ef649ead725c6e55533ef37"
+    },
+    {
+      "file": "metadata/what_is_new.txt",
+      "size_kb": 0.1,
+      "md5": "b43c65290a5da84796f4ade3ce68044d"
+    }
+  ]
+}

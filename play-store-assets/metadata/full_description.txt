@@ -1,0 +1,25 @@
+Selamat datang di Jadwal Sholat Lengkap, aplikasi Android terpercaya dan modern yang dirancang untuk memberikan kemudahan dan kecepatan terbaik bagi Anda.
+
+✨ FITUR UTAMA APLIKASI:
+
+1. Jadwal Waktu Sholat Akurat
+   - Disesuaikan koordinat GPS & Kemenag RI secara presisi.
+
+2. Notifikasi Suara Adzan
+   - Pilihan adzan merdu dan pengingat waktu imsakiyah.
+
+3. Al-Qur'an Digital 30 Juz
+   - Teks ayat rasm Utsmani, terjemahan Indonesia & audio murottal.
+
+4. Kompas Arah Kiblat Presisi
+   - Penunjuk kiblat akurat dengan kalibrasi sensor otomatis.
+
+5. Doa Harian & Dzikir
+   - Koleksi doa mustajab & dzikir pagi petang shahih.
+
+🔒 KEAMANAN & PRIVASI:
+- Privasi Anda adalah prioritas utama kami.
+- Data tersimpan lokal di perangkat dan tidak dikirimkan ke pihak ketiga tanpa izin.
+- Sesuai dengan UU Pelindungan Data Pribadi (UU PDP No. 27/2022) & regulasi privasi global (GDPR).
+
+Unduh sekarang dan rasakan kemudahannya!

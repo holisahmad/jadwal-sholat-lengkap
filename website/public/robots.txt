@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://numos-beige.vercel.app/sitemap.xml
