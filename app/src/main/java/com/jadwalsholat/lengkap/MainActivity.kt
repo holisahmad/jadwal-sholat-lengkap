@@ -44,6 +44,13 @@ class MainActivity : ComponentActivity() {
         // Inisialisasi UMP Consent & AdMob
         AdManager.initialize(this)
 
+        // Inisialisasi Notification Channel & Alarm Sholat
+        com.jadwalsholat.lengkap.notification.PrayerNotificationHelper.createNotificationChannel(this)
+        if (preferenceManager.notifEnabled) {
+            val city = CityData.findCity(preferenceManager.cityId)
+            com.jadwalsholat.lengkap.notification.PrayerNotificationHelper.scheduleAlarms(this, preferenceManager, city)
+        }
+
         setContent {
             var currentTheme by remember { mutableStateOf(preferenceManager.themeMode) }
             JadwalSholatLengkapTheme(themeMode = currentTheme) {

@@ -22,6 +22,10 @@ class PreferenceManager(context: Context) {
         private const val KEY_QURAN_ARAB_ONLY = "pref_quran_arab_only"
         private const val KEY_THEME_MODE = "pref_theme_mode" // "system", "dark", "light"
         private const val KEY_ARABIC_FONT = "pref_arabic_font" // "scheherazade", "amiri", "noto_naskh"
+        private const val KEY_NOTIF_ENABLED = "pref_notif_enabled"
+        private const val KEY_NOTIF_OFFSET = "pref_notif_offset"
+        private const val KEY_TASBIH_COUNT = "pref_tasbih_count"
+        private const val KEY_TASBIH_TARGET = "pref_tasbih_target"
     }
 
     var cityId: String
@@ -127,4 +131,92 @@ class PreferenceManager(context: Context) {
         }
         return streak
     }
+
+    // ==========================================
+    // NOTIFICATIONS
+    // ==========================================
+
+    var notifEnabled: Boolean
+        get() = prefs.getBoolean(KEY_NOTIF_ENABLED, false)
+        set(value) = prefs.edit().putBoolean(KEY_NOTIF_ENABLED, value).apply()
+
+    var notifOffsetMinutes: Int
+        get() = prefs.getInt(KEY_NOTIF_OFFSET, 0)
+        set(value) = prefs.edit().putInt(KEY_NOTIF_OFFSET, value).apply()
+
+    fun isPrayerNotifEnabled(prayerType: PrayerType): Boolean {
+        return prefs.getBoolean("notif_${prayerType.name}", true)
+    }
+
+    fun setPrayerNotifEnabled(prayerType: PrayerType, enabled: Boolean) {
+        prefs.edit().putBoolean("notif_${prayerType.name}", enabled).apply()
+    }
+
+    // ==========================================
+    // EXTRA SUNNAH / IBADAH TRACKING
+    // ==========================================
+    fun isExtraIbadahChecked(key: String, date: Date = Date()): Boolean {
+        val prefKey = "extra_${getTodayKey(date)}_$key"
+        return prefs.getBoolean(prefKey, false)
+    }
+
+    fun toggleExtraIbadah(key: String, date: Date = Date()): Boolean {
+        val prefKey = "extra_${getTodayKey(date)}_$key"
+        val current = prefs.getBoolean(prefKey, false)
+        val updated = !current
+        prefs.edit().putBoolean(prefKey, updated).apply()
+        return updated
+    }
+
+    // ==========================================
+    // 7-DAY PROGRESS HISTORY
+    // ==========================================
+    data class DayProgressItem(
+        val dateKey: String,
+        val dayName: String,
+        val completedCount: Int,
+        val isToday: Boolean
+    )
+
+    fun getPast7DaysProgress(date: Date = Date()): List<DayProgressItem> {
+        val trackable = listOf(PrayerType.FAJR, PrayerType.DHUHR, PrayerType.ASR, PrayerType.MAGHRIB, PrayerType.ISHA)
+        val dayNames = arrayOf("Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab")
+        val items = mutableListOf<DayProgressItem>()
+        val todayStr = getTodayKey(date)
+
+        val cal = Calendar.getInstance()
+        cal.time = date
+        // Go 6 days back to show chronological order (6 days ago -> today)
+        cal.add(Calendar.DAY_OF_MONTH, -6)
+
+        for (i in 0..6) {
+            val key = getTodayKey(cal.time)
+            val dayOfWeek = cal.get(Calendar.DAY_OF_WEEK) - 1
+            val dayName = dayNames[dayOfWeek.coerceIn(0, 6)]
+            val completed = trackable.count { prayer ->
+                prefs.getBoolean("prayer_${key}_${prayer.name}", false)
+            }
+            items.add(
+                DayProgressItem(
+                    dateKey = key,
+                    dayName = dayName,
+                    completedCount = completed,
+                    isToday = key == todayStr
+                )
+            )
+            cal.add(Calendar.DAY_OF_MONTH, 1)
+        }
+        return items
+    }
+
+    // ==========================================
+    // DIGITAL TASBIH
+    // ==========================================
+    var tasbihCount: Int
+        get() = prefs.getInt(KEY_TASBIH_COUNT, 0)
+        set(value) = prefs.edit().putInt(KEY_TASBIH_COUNT, value).apply()
+
+    var tasbihTarget: Int
+        get() = prefs.getInt(KEY_TASBIH_TARGET, 33)
+        set(value) = prefs.edit().putInt(KEY_TASBIH_TARGET, value).apply()
 }
